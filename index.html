@@ -5,42 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ページタイトル -->
-    <title></title>
+    <title>トランス物流株式会社</title>
+
     <meta name="description" content="">
-
-    <!-- スマホ 自動リンク 防止 -->
     <meta name="format-detection" content="telephone=no">
-
-    <!-- ogp -->
-    <meta property="og:site_name" content="">
+    <meta property="og:site_name" content="トランス物流株式会社">
     <meta property="og:url" content="">
-    <meta property="og:type" content="">
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="トランス物流株式会社">
+    <meta property="og:description" content="ここは、「人々の心をつなぎ、生活を支える」というポリシーのもと、
+    専属チャーター配送、危険物輸送を行うトランス物流株式会社のサービスサイトです">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:image" content="">
 
-
-    <!-- ファビコン -->
     <link rel="icon" href="">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="">
+    <!-- css 読み込み -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Google fonts  -->
+    <!-- google font [noto sans jp] [oswald] -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- ヘッダー -->
+    <!-- ========================== ヘッダー ========================== -->
     <header class="header">
-        <div class="header__wrapper">
+        <div class="header__content">
 
-            <!-- ロゴ -->
             <h1 class="header__logo"><a href="#"><img src="assets/images/logo.png" alt="トランス物流株式会社"></a></h1>
 
-            <!-- ナビゲーション -->
             <nav class="header__nav">
                 <ul class="header__nav-list">
                     <li class="header__nav-item"><a href="#">私たちの想い</a></li>
@@ -48,31 +46,28 @@
                     <li class="header__nav-item"><a href="#">実績紹介</a></li>
                     <li class="header__nav-item"><a href="#">会社案内</a></li>
                     <li class="header__nav-item"><a href="#">お知らせ</a></li>
-                    <li class="header__nav-item header__nav-item--btn"><a href="#"><span><img
+                    <li class="header__nav-item header__nav-item--btn"><a href="#"><span class="icon"><img
                                     src="assets/images/icon_mail.png" alt="メールアイコン"></span>お問い合わせ</a></li>
                 </ul>
             </nav>
 
-            <!-- ハンバーガーボタン -->
             <button class="hamburger-btn">
+                <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
     </header>
 
-    <!-- ========================== メインコンテンツ ========================== -->
     <main>
 
-        <!--================ ファーストビュー ================-->
+        <!-- ========================== fv ========================== -->
         <section class="fv">
 
             <div class="fv__content">
 
-                <!-- メインビジュアル -->
                 <div class="mainvisual">
 
-                    <!-- キャッチコピー -->
                     <div class="mainvisual__copy-wrapper">
 
                         <h2 class="mainvisual__copy mainvisual__copy--main">未知なる道を、走り続ける。</h2>
@@ -80,20 +75,18 @@
                             Every mile reflects our commitment to a lasting partnership and your business success.</p>
                     </div>
 
-                    <!-- 画像 -->
                     <div class="mainvisual__img">
                         <picture>
-                            <source media="(min-width: 1020px)" srcset="assets/images/visual.jpg">
-                            <img src="assets/images/visual_sp.jpg" alt="夕日の中を走行するトラック">
+                            <source media="(min-width: 1020px)" srcset="assets/images/mainvisual.jpg">
+                            <img src="assets/images/mainvisual-sp.jpg" alt="夕日の中を走行するトラック">
                         </picture>
                     </div>
                 </div>
 
-                <!-- サイドバー -->
+                <!-- メインコンテンツの理解に必須ではない補助コンテンツのためasideを使用 -->
                 <aside class="side-var">
 
-                    <!-- snsリスト -->
-                    <nav class="sns-nav" aria-label="SNSリンク">
+                    <nav class="sns-nav">
 
                         <span class="sns-nav__text">follow us</span>
 
@@ -122,59 +115,281 @@
             </div>
         </section>
 
-
-        <!--================ feature ================-->
+        <!-- ========================== feature ========================== -->
         <section class="feature">
             <div class="feature__content">
                 <h2 class="feature__heading">feature</h2>
 
                 <div class="feature__text-area">
-                    <h3 class="feature__lead-area">
+                    <p class="feature__lead-area">
                         <span class="feature__lead">ものを運び、心をつなぐ。</span>
                         <span class="feature__lead">人々の生活を支え続けます。</span>
-                    </h3>
-
-                    <p class="feature__description">
-                        わたしたちの考える物流は、ただの荷物の運搬ではありません。
-                        ビジネスの流れ、人々の生活、そして社会のつながりを、あらゆるネットワークでサポートする重要な役割を果たしています。
                     </p>
 
-                    <p class="feature__description">
-                        運搬業者としての役割を超えて、お客さまの想いをたいせつに届けること。それは製品、ギフト、思い出…すべての『もの』に対する私たちの誠実な約束です。
-                    </p>
 
-                    <p class="feature__description">
-                        わたしたちはその約束を守るために努力しており、みなさまのビジネスや生活を支え続けることを使命としております。
-                    </p>
+                    <div class="feature__description-area">
 
-                    <a href="#" class="feature__btn btn btn--border">私たちの想い<span class=""></span></a>
+                        <p class="feature__description">
+                            わたしたちの考える物流は、ただの荷物の運搬ではありません。
+                            ビジネスの流れ、人々の生活、そして社会のつながりを、あらゆるネットワークでサポートする重要な役割を果たしています。
+                        </p>
+
+                        <p class="feature__description">
+                            運搬業者としての役割を超えて、お客さまの想いをたいせつに届けること。それは製品、ギフト、思い出…すべての『もの』に対する私たちの誠実な約束です。
+                        </p>
+
+                        <p class="feature__description">
+                            わたしたちはその約束を守るために努力しており、みなさまのビジネスや生活を支え続けることを使命としております。
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="feature__btn btn btn--border">私たちの想い<span
+                            class="btn-arrow btn-arrow--border"></span></a>
 
                 </div>
 
                 <div class="feature__img-area">
-
+                    <span class="feature__img"><img src="assets/images/feature-img1.jpg" alt="ダンボールの配送物を抱える作業員"></span>
+                    <span class="feature__img"><img src="assets/images/feature-img2.jpg" alt="夕日に照らされる高速道路"></span>
                 </div>
             </div>
         </section>
 
+        <!-- ========================== service ========================== -->
+        <section class="service">
+            <div class="service__content">
+                <div class="service__heading-area">
+                    <h2 class="service__heading">service</h2>
+                    <p class="service__sub-heading sub-heading">サービス案内</p>
+                </div>
+
+                <ol class="service__list">
+                    <li class="service__item">
+                        <div class="service__item-text-area">
+                            <h3 class="service__item-title">専属チャーター配送</h3>
+                            <p class="service__item-description">
+                                専属ドライバーが貸切で配送します。
+                                先進的トラッキングシステムを利用して、荷物の現在位置や予定の配達時刻、さらには気象情報など、
+                                あらゆる情報をリアルタイムで確認することができます。
+                            </p>
+
+                            <a href="#" class="feature__btn btn btn--box">くわしく見る<span class="btn-arrow
+                                    btn-arrow--box"></span></a>
+                        </div>
+
+                        <div class="service__img-area">
+                            <img src="assets/images/service-img1.jpg" alt="高速道路を並んで走行する、複数のトラック">
+                        </div>
+                    </li>
+
+                    <li class="service__item">
+                        <div class="service__item-text-area">
+                            <h3 class="service__item-title">危険物輸送</h3>
+                            <p class="service__item-description">
+                                危険物取扱者の国家資格を持ち、長年の経験を積んだベテランドライバーが対応いたします。
+                                人体や環境などに十分な配慮や処置をおこなったうえで、目的地まで危険物を安心・安全に輸送いたします。
+                            </p>
+
+                            <a href="#" class="feature__btn btn btn--box">くわしく見る<span class="btn-arrow
+                                    btn-arrow--box"></span></a>
+                        </div>
+
+                        <div class="service__img-area">
+                            <img src="assets/images/service-img2.jpg" alt="曲線の山道を走行する白トラック">
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ========================== works ========================== -->
+        <section class="works">
+            <div class="works__content">
+
+                <div class="works__block works__block--top">
+                    <div class="works__heading-area">
+                        <h2 class="works__heading">works</h2>
+                        <p class="works__sub-heading sub-heading">実績紹介</p>
+                    </div>
+
+                    <p class="works__lead">当社は関東エリアを中心に、様々な物流関連業務の実績がございます。
+                        多種多様な実績の一部をご覧ください。</p>
+                </div>
+
+                <div class="works__block works__block--bottom">
+
+                    <ul class="works__list">
+                        <li class="works__item">
+                            <h3 class="works__item-title">冷蔵・冷蔵商品の配送</h3>
+                            <img src="assets/images/works-img1.jpg" alt="冷蔵された野菜">
+                        </li>
+
+                        <li class="works__item">
+                            <h3 class="works__item-title">大型重機の特殊輸送</h3>
+                            <img src="assets/images/works-img2.jpg" alt="黄色の大型重機">
+                        </li>
+
+                        <li class="works__item">
+                            <h3 class="works__item-title">危険物の専門配送</h3>
+                            <img src="assets/images/works-img3.jpg" alt="様々な色のコンテナが並ぶ風景">
+                        </li>
+
+                        <li class="works__item">
+                            <h3 class="works__item-title">建築資材の配送</h3>
+                            <img src="assets/images/works-img4.jpg" alt="均等に積まれている細く加工された木材">
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="#" class="works__btn btn btn--box">実績をもっと見る<span class="btn-arrow
+                                    btn-arrow--box"></span></a>
+            </div>
+        </section>
+
+        <!-- ========================== company ========================== -->
+        <section class="company">
+            <div class="company__content">
+
+                <div class="company__text-area">
+                    <div class="company__heading-area">
+                        <h2 class="company__heading">company</h2>
+                        <p class="company__sub-heading sub-heading">会社案内</p>
+                    </div>
+
+                    <p class="company__lead-area">
+                        <span class="company__lead">想いを運びつづけて80年。</span>
+                        <span class="company__lead">常に先をめざして走り続けます。</span>
+                    </p>
+
+                    <div class="company__text-block company__text-block--bottom">
+                        <p class="company__lead">創業80年を超える歴史を持ち、絶えず技術革新とサービスの向上を追求し続け、
+                            多岐にわたる業界ニーズに応えてきました。
+                            これからも物流・運送業界におけるリーディングカンパニーとして常に先を走り続けます。</p>
+
+
+                        <!-- companyの関連ページへ遷移するためのリンク集合のため nav を使用 -->
+                        <nav class="company__nav">
+                            <ul class="company__list">
+                                <li class="company__item"><a href="#">会社概要<span
+                                            class="company__item-btn-arrow btn-arrow btn-arrow--box"></span></a></li>
+                                <li class="company__item"><a href="#">ご挨拶・企業理念<span
+                                            class="company__item-btn-arrow btn-arrow btn-arrow--box"></span></a></li>
+                                <li class="company__item"><a href="#">アクセスマップ<span
+                                            class="company__item-btn-arrow btn-arrow btn-arrow--box"></span></a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================== news ========================== -->
+        <section class="news">
+            <div class="news__content">
+
+                <div class="news__block news__block--top">
+                    <div class="news__heading-area">
+                        <h2 class="news__heading">news</h2>
+                        <p class="news__sub-heading sub-heading">お知らせ</p>
+                    </div>
+
+                    <ul class="news__list">
+                        <li class="news__item">
+                            <a href="#">
+                                <time datetime="2026-01-01">2026.01.01</time>
+                                <h3 class="news__title">ここにお知らせのタイトルが入ります</h3>
+                            </a>
+                        </li>
+                        <li class="news__item">
+                            <a href="#">
+                                <time datetime="2026-01-02">2026.01.02</time>
+                                <h3 class="news__title">ここにお知らせのタイトルが入ります</h3>
+                            </a>
+                        </li>
+                        <li class="news__item">
+                            <a href="#">
+                                <time datetime="2026-01-03">2026.01.03</time>
+                                <h3 class="news__title">ここにお知らせのタイトルが入ります</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="news__block news__block--bottom">
+                    <a href="#" class="news__btn btn btn--border">view more<span
+                            class="news__btn-arrow btn-arrow btn-arrow--border"></span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================== contact ========================== -->
+        <section class="contact">
+            <h2 class="contact__heading">contact</h2>
+            <p class="contact__lead">運送・配送についてのご依頼・ お問い合わせはこちらから</p>
+
+            <div class="contact__cta-area">
+                <div class="contact__cta-content contact__cta-content--tel">
+                    <a href="#">
+                        <span class="tel-number"><span class="tel-icon"><img src="assets/images/icon_tel.png"
+                                    alt="電話の受話器のアイコン"></span>
+                            000-123-4567</span>
+                        <span class="business-hours">営業時間 / 平日9:00 ~ 18:00</span>
+                    </a>
+                </div>
+                <div class="contact__cta-content contact__cta-content--email">
+                    <a href="#" class="email-btn"><span class="email-icon"><img src="assets/images/icon_mail.png"
+                                alt="メールアイコン"></span>メールでのお問い合わせ</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!--================ フッター ================-->
+    <!-- ========================== footer ========================== -->
     <footer class="footer">
         <div class="footer__wrapper">
 
-            <!-- ロゴ -->
-            <h1 class="footer__logo"><a href=""></a></h1>
+            <div class="footer__logo"><a href="#"><img src="assets/images/logo.png" alt=""></a></div>
 
-            <!-- ナビゲーション -->
-            <nav class="footer__nav">
-                <ul class="footer__nav-list">
-                    <li class="footer__nav-item"><a href=""></a></li>
-                </ul>
-            </nav>
+            <div class="footer__block footer__block--middle">
+                <nav class="footer__nav">
+                    <ul class="footer__nav-list">
+                        <li class="footer__nav-item"><a href="#">私たちの想い</a></li>
+                        <li class="footer__nav-item"><a href="#">サービス案内</a></li>
+                        <li class="footer__nav-item"><a href="#">実績紹介</a></li>
+                        <li class="footer__nav-item"><a href="#">会社案内</a></li>
+                        <li class="footer__nav-item"><a href="#">お知らせ</a></li>
+                        <li class="footer__nav-item"><a href="#">お問い合わせ</a></li>
+                    </ul>
+                </nav>
 
-            <!-- コピーライト -->
-            <small class="copyright"></small>
+                <div class="footer__info">
+                    <ul class="address__list">
+                        <li class="address__item">住所が入ります住所が入ります</li>
+                        <li class="address__item">住所が入ります住所が入ります</li>
+                    </ul>
+
+                    <p class="tel">tel: 000-123-4567 / fax 000-123-4568</p>
+                </div>
+            </div>
+
+            <div class="footer__block footer__block--bottom">
+
+                <!-- 移動導線として機能するリンク集合のため nav を使用 -->
+                <nav class="footer-legal">
+                    <ul class="footer-legal__list">
+                        <li class="footer-legal__item">
+                            <a href="#">プライバシーポリシー</a>
+                        </li>
+                        <li class="footer-legal__item">
+                            <a href="#">サイトマップ</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <small class="copyright">Copyright トランス物流株式会社 All Rights Reserved.</small>
+            </div>
 
         </div>
     </footer>
