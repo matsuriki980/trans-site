@@ -35,19 +35,3 @@ dt,
 dd {
   margin: 0;
 }
-
-@media (max-width: 1439px) {
-  .sp-hidden {
-    display: none;
-  }
-}
-
-@media (min-width: 1440px) {
-  .pc-hidden {
-    display: none;
-  }
-}
-
-.en {
-  font-family: var(--font-family-en);
-}
