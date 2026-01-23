@@ -2,16 +2,18 @@
 
 ## 作業日
 
-1/21<br>
+1/23<br>
 
 ## 作業内容
 
 <h3>css コーディング</h3>
-・fv<br>
-・feature<br>
+・feature SP 見出し<br>
+・service SP <br>
 
 <h3>ポイント</h3>
-・fv：画面の高さ一杯に表示するため、高さを指定。<br>
-　UIバーの表示状態に左右されない挙動とするため、100svh を使用。<br>
-・feature：背景画像には高さを指定し、overflow と object-fit を使用することで、画面幅に応じて自動的に表示が調整されるようにした。<br>
-　高さの調整は padding によって行っている。<br>
+・feature　見出し 中抜きテキスト：svgで表現<br>
+　理由：CSSのbackground-clip等では、完全な中抜きや境界線の制御が難しい。<br>
+　また、画像ではサイズ調整やSEOに弱いため。<br>
+・servce：リスト項目に padding-bottom を指定して高さを確保し、<br>
+　テキストエリアは position: absolute と bottom: 0 で下端に配置することで、位置を調整している。<br>
+　

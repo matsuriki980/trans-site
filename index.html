@@ -173,14 +173,21 @@
                 </div>
             </div>
 
-            <div class="feature__heading-area en">
-                <h2 class="feature__heading">
-                    feature
-                </h2>
-                <span class="feature__heading feature__heading--border">
-                    feature
-                </span>
-            </div>
+            <h2 class="feature__heading en">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="xMaxYMid meet"
+                    width="100%" height="auto">
+                    <defs>
+                        <linearGradient id="featureGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="white" stop-opacity="0.4" />
+                            <stop offset="100%" stop-color="white" stop-opacity="0.1" />
+                        </linearGradient>
+                    </defs>
+
+                    <text class="feature__svg-text" fill="url(#featureGradient)" x="100%" y="50%" text-anchor="end"
+                        dominant-baseline="middle">
+                        feature</text>
+                </svg>
+            </h2>
 
             <div class="feature__content">
 
@@ -223,8 +230,8 @@
         <!-- ========================== service ========================== -->
         <section class="service">
             <div class="service__content">
-                <div class="service__heading-area">
-                    <h2 class="service__heading">service</h2>
+                <div class="service__heading-area heading-area">
+                    <h2 class="service__heading heading en">service</h2>
                     <p class="service__sub-heading sub-heading">サービス案内</p>
                 </div>
 
@@ -238,7 +245,7 @@
                                 あらゆる情報をリアルタイムで確認することができます。
                             </p>
 
-                            <a href="#" class="feature__btn btn btn--box">くわしく見る<span class="btn-arrow
+                            <a href="#" class="service__btn btn btn--box">くわしく見る<span class="btn-arrow
                                     btn-arrow--box"></span></a>
                         </div>
 
@@ -255,7 +262,7 @@
                                 人体や環境などに十分な配慮や処置をおこなったうえで、目的地まで危険物を安心・安全に輸送いたします。
                             </p>
 
-                            <a href="#" class="feature__btn btn btn--box">くわしく見る<span class="btn-arrow
+                            <a href="#" class="service__btn btn btn--box">くわしく見る<span class="btn-arrow
                                     btn-arrow--box"></span></a>
                         </div>
 
