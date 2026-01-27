@@ -19,6 +19,11 @@
     #56bcd5 20%,
     var(--main-color) 100%
   );
+  --gradient-primary-dark-rgb: linear-gradient(
+    90deg,
+    rgb(67 125 149) 0%,
+    rgb(8 22 57) 100%
+  );
   --font-family-jp: "Noto Sans JP", sans-serif;
   --font-family-en: "Oswald", sans-serif;
   --font-weight-regular: 400;
@@ -93,6 +98,8 @@ html {
 
 .heading {
   font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-en);
+  text-transform: uppercase;
 }
 
 @media (max-width: 896px) {
@@ -246,6 +253,8 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: var(--font-family-en);
+  text-transform: uppercase;
 }
 
 .btn--border {
@@ -501,7 +510,7 @@ html {
     height: calc(70 / 400 * 100vw);
   }
 
-  .header__nav-contact-cta--email .email-icon {
+  .header__nav-contact-cta--email .email-icon-wrapper {
     background: var(--main-color);
     width: calc(36 / 400 * 100vw);
     height: calc(36 / 400 * 100vw);
@@ -509,6 +518,10 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .header__nav-contact-cta--email .email-icon {
+    width: calc(24 / 400 * 100vw);
   }
 
   .sns-nav--header {
@@ -1029,7 +1042,7 @@ html {
   }
 
   .feature__description-area {
-    row-gap: var(--space-3xl-pc);
+    row-gap: var(--space-2xl-pc);
     margin-bottom: calc(120 / 1600 * 100vw);
   }
 }
@@ -1456,10 +1469,10 @@ html {
   background: var(--base-color);
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 896px) {
   .company {
-    margin-bottom: var(--space-section-sp);
-    padding-top: var(--space-3xl);
+    margin-bottom: var(--space-section);
+    padding-top: var(--space-4xl);
   }
 
   .company__bg {
@@ -1468,7 +1481,7 @@ html {
   }
 
   .company__copy-area {
-    margin-bottom: calc(var(--space-lg) * 10);
+    margin-bottom: calc(280 / 400 * 100vw);
   }
 
   .company__text-area {
@@ -1478,15 +1491,15 @@ html {
   .company__text-area-content {
     width: 90%;
     margin-right: auto;
-    padding: clamp(10rem, 26.6vw, 12rem) 10%;
+    padding: calc(88 / 400 * 100vw) calc(40 / 400 * 100vw);
   }
 
   .company__text-area::before {
     content: "";
     display: block;
     position: absolute;
-    width: min(64vw, 30rem);
-    height: min(64vw, 30rem);
+    width: calc(230 / 400 * 100vw);
+    height: calc(280 / 400 * 100vw);
     background-image: url(../images/logo__icon.png);
     background-repeat: no-repeat;
     background-position: top right;
@@ -1498,7 +1511,7 @@ html {
     text-align: center;
     left: 50%;
     transform: translateX(-50%);
-    top: -25px;
+    top: -4%;
   }
 
   .company__description {
@@ -1510,10 +1523,9 @@ html {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 896px) {
   .company {
-    margin-bottom: var(--space-section-pc);
-    padding-top: var(--space-section-pc);
+    padding-top: calc(200 / 1600 * 100vw);
   }
 
   .company__bg {
@@ -1526,17 +1538,16 @@ html {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-bottom: calc(var(--space-lg) * 24);
+    margin-bottom: calc(390 / 1600 * 100vw);
   }
 
   .company__copy {
-    font-size: clamp(3.6rem, 2.5vw, 4.2rem);
-    margin-bottom: var(--space-xs);
-    padding: var(--space-xs) var(--space-md);
+    margin-bottom: calc(6 / 1600 * 100vw);
+    padding: var(--space-md-pc) var(--space-lg-pc);
   }
 
   .company__text-area-content {
-    padding: clamp(10rem, 26.6vw, 12rem) 10%;
+    padding: calc(120 / 1600 * 100vw);
     width: 85%;
     margin-left: auto;
     position: relative;
@@ -1549,18 +1560,18 @@ html {
     z-index: 1;
     top: 0;
     left: 0;
-    width: min(31.25vw, 45rem);
+    width: calc(450 / 1600 * 100vw);
     height: 100%;
     background-image: url(../images/logo__icon.png);
     background-repeat: no-repeat;
     background-position: top right;
-    background-size: 115%;
+    background-size: 150%;
   }
 
   .company__heading-area {
     text-align: left;
-    left: 11.5%;
-    top: -65px;
+    left: calc(120 / 1600 * 100vw);
+    top: -11%;
   }
 
   .company__text-block--bottom {
@@ -1574,11 +1585,328 @@ html {
   }
 
   .company__nav {
-    width: 32rem;
+    width: calc(360 / 1600 * 100vw);
   }
 
   .company__list {
     width: 100%;
-    row-gap: var(--space-md);
+    row-gap: var(--space-sm-pc);
+  }
+}
+
+/* ========================== news ========================== */
+.news {
+  background: var(--sub-color);
+  width: 100%;
+}
+
+.news__heading {
+  color: var(--main-color);
+}
+
+.news__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.news__item {
+  border-bottom: 1px solid rgba(var(--font-color-rgb) / 0.2);
+  width: 100%;
+}
+
+.news__link {
+  display: flex;
+}
+
+.news__date {
+  color: var(--main-color);
+}
+
+.news__title {
+  line-height: var(--line-height);
+}
+
+.news__btn {
+  color: var(--main-color);
+  margin-left: auto;
+  border-bottom: 1px var(--main-color) solid;
+}
+
+.news__btn-arrow {
+  background: var(--base-color);
+}
+
+.news__btn-arrow::before {
+  background: var(--main-color);
+}
+
+@media (max-width: 896px) {
+  .news {
+    padding: var(--space-section) 0;
+  }
+
+  .news__heading-area {
+    text-align: center;
+  }
+
+  .news__content {
+    padding: var(--wrapper);
+  }
+
+  .news__list {
+    row-gap: var(--space-lg);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .news__item {
+    padding-bottom: var(--space-lg);
+  }
+
+  .news__link {
+    flex-direction: column;
+    row-gap: var(--space-2xs);
+  }
+
+  .news__date {
+    font-size: calc(12 / 400 * 100vw);
+  }
+
+  .news__btn {
+    width: 50%;
+  }
+}
+
+@media (min-width: 896px) {
+  .news {
+    padding: var(--space-section-pc) 0;
+  }
+
+  .news__heading-area {
+    text-align: left;
+  }
+
+  .news__content {
+    padding: 0 7.5%;
+  }
+
+  .news__block--top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .news__list {
+    row-gap: calc(36 / 1600 * 100vw);
+    margin-bottom: var(--space-4xl-pc);
+    width: 73.33333%;
+  }
+
+  .news__item {
+    padding-bottom: calc(36 / 1600 * 100vw);
+  }
+
+  .news__link {
+    column-gap: calc(90 / 1600 * 100vw);
+    align-items: center;
+  }
+
+  .news__date {
+    font-size: calc(12 / 1600 * 100vw);
+  }
+
+  .news__btn {
+    width: 15%;
+  }
+}
+
+/* ========================== contact ========================== */
+.contact {
+  position: relative;
+  background-image: url(../images/contact__bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.contact::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: rgba(var(--gradient-primary-dark-rgb) / 0.2);
+}
+
+.contact__heading {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact__lead {
+  line-height: 1.5;
+  color: var(--base-color);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+}
+
+.contact__cta-area {
+  background: var(--base-color);
+  display: flex;
+}
+
+.contact__cta-content a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact__cta-content--tel a {
+  flex-direction: column;
+}
+
+.contact__cta-content--email .email-btn {
+  background: var(--gradient-primary-light);
+  color: var(--base-color);
+}
+
+.contact__cta-content .tel-number {
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+}
+
+.contact__cta-content .tel-icon,
+.contact__cta-content .email-icon {
+  display: inline-block;
+}
+
+.contact__cta-content .email-icon-wrapper {
+  background: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: calc(2 / 400 * 100vw);
+}
+
+@media (max-width: 896px) {
+  .contact {
+    padding: calc(145 / 400 * 100vw) 5% calc(80 / 400 * 100vw);
+  }
+
+  .contact__heading {
+    width: 100%;
+    top: var(--space-4xl);
+  }
+
+  .contact__lead {
+    font-size: calc(18 / 400 * 100vw);
+    margin-bottom: calc(135 / 400 * 100vw);
+  }
+
+  .contact__cta-area {
+    padding: calc(35 / 400 * 100vw) 5% 5%;
+    flex-direction: column;
+    row-gap: calc(36 / 400 * 100vw);
+  }
+
+  .contact__cta-content a {
+    column-gap: var(--space-2xs);
+  }
+
+  .contact__cta-content--tel a {
+    row-gap: var(--space-sm);
+  }
+
+  .contact__cta-content .tel-number {
+    font-size: calc(30 / 400 * 100vw);
+    column-gap: var(--space-xs);
+  }
+
+  .contact__cta-content--tel .business-hours {
+    font-size: calc(13 / 400 * 100vw);
+  }
+
+  .contact__cta-content--email .email-btn {
+    height: calc(80 / 400 * 100vw);
+    column-gap: var(--space-xs);
+    font-size: calc(18 / 400 * 100vw);
+  }
+
+  .contact__cta-content .tel-icon,
+  .contact__cta-content .email-icon {
+    width: calc(24 / 400 * 100vw);
+  }
+
+  .contact__cta-content .email-icon-wrapper {
+    width: calc(36 / 400 * 100vw);
+    height: calc(36 / 400 * 100vw);
+  }
+}
+
+@media (min-width: 896px) {
+  .contact {
+    padding: calc(185 / 1600 * 100vw) calc(315 / 1600 * 100vw)
+      calc(110 / 1600 * 100vw);
+  }
+
+  .contact__heading {
+    width: calc(800 / 1600 * 100vw);
+    top: calc(120 / 1600 * 100vw);
+  }
+
+  .contact__lead {
+    font-size: calc(30 / 1600 * 100vw);
+    margin-bottom: calc(120 / 1600 * 100vw);
+  }
+
+  .contact__cta-area {
+    padding: calc(24 / 1600 * 100vw);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact__cta-content a {
+    column-gap: var(--space-xs-pc);
+  }
+
+  .contact__cta-content--tel {
+    width: 44.79166%;
+  }
+
+  .contact__cta-content--tel a {
+    row-gap: var(--space-sm-pc);
+  }
+
+  .contact__cta-content .tel-number {
+    font-size: calc(36 / 1600 * 100vw);
+    column-gap: var(--space-xs-pc);
+  }
+
+  .contact__cta-content--tel .business-hours {
+    font-size: calc(13 / 1600 * 100vw);
+  }
+
+  .contact__cta-content--email {
+    width: 47.91%;
+  }
+
+  .contact__cta-content--email .email-btn {
+    height: calc(125 / 1600 * 100vw);
+    column-gap: var(--space-md-pc);
+    font-size: calc(22 / 1600 * 100vw);
+  }
+
+  .contact__cta-content .tel-icon,
+  .contact__cta-content .email-icon {
+    width: calc(24 / 1600 * 100vw);
+  }
+
+  .contact__cta-content .email-icon-wrapper {
+    width: calc(48 / 1600 * 100vw);
+    height: calc(48 / 1600 * 100vw);
   }
 }
