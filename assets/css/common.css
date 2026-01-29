@@ -1,38 +1,366 @@
-@charset "utf-8";
-/* CSS Document */
+:root {
+  --base-vw: 400;
+  --wrapper-sp: 0 20rem;
+  --space-2xs: 4rem;
+  --space-xs: 8rem;
+  --space-sm: 12rem;
+  --space-md: 16rem;
+  --space-lg: 24rem;
+  --space-xl: 32rem;
+  --space-2xl: 48rem;
+  --space-3xl: 64rem;
+  --space-4xl: 80rem;
+  --space-5xl: 100rem;
+  --space-6xl: 120rem;
+  --space-7xl: 160rem;
+  --base-color: #fff;
+  --base-color-rgb: 255 255 255;
+  --font-color: #222;
+  --font-color-rgb: 34 34 34;
+  --main-color: #0968aa;
+  --main-color-rgb: 9 104 170;
+  --sub-color: #f3f5f6;
+  --accent-color: #3babc6;
+  --accent-color-rgb: 59 171 198;
+  --gradient-primary: linear-gradient(
+    -30deg,
+    var(--main-color) 0%,
+    var(--accent-color) 80%
+  );
+  --gradient-primary--light: linear-gradient(
+    90deg,
+    #56bcd5 20%,
+    var(--main-color) 100%
+  );
+  --gradient-primary--contact: linear-gradient(
+    90deg,
+    rgb(67 125 149) 0%,
+    rgb(8 22 57) 100%
+  );
+
+  --gradient-primary--footer: linear-gradient(
+    90deg,
+    rgb(22 56 80) 0%,
+    rgb(34 34 34) 100%
+  );
+
+  --font-family-jp: "Noto Sans JP", sans-serif;
+  --font-family-en: "Oswald", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height: 2.125;
+  --logo-size: 160rem;
+  --logo-size-pc: 320rem;
+}
+
+@media (min-width: 896px) {
+  :root {
+    --base-vw: 1600;
+    --logo-size: 320rem;
+  }
+}
+
+/* ========================== 全体設定 ========================== */
+
 html {
   width: 100%;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  text-align: left;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
+  scroll-behavior: smooth; /* 快適なスクロールによるUX向上のため設定 */
+  font-size: calc(
+    100vw / var(--base-vw)
+  ); /* デザインカンプの幅を基準にサイズ設定 */
+  font-family: var(--font-family-jp);
 }
-img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: bottom;
+
+/* ========================== 非表示スタイル ========================== */
+
+@media (max-width: 896px) {
+  .sp-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 896px) {
+  .pc-hidden {
+    display: none;
+  }
+}
+
+/* ========================== 英字は大文字に ========================== */
+
+.en {
+  font-family: var(--font-family-en);
+  text-transform: uppercase;
+}
+
+/* ========================== フォント ベースサイズ設定 ========================== */
+
+body {
+  font-size: 16rem;
+  letter-spacing: 0.05em;
+}
+
+/* ========================== 見出し ========================== */
+
+.heading-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-en);
+  text-transform: uppercase;
+}
+
+@media (max-width: 896px) {
+  .heading-area {
+    row-gap: var(--space-sm);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .heading {
+    font-size: 48rem;
+  }
+}
+
+@media (min-width: 896px) {
+  .heading-area {
+    row-gap: var(--space-md);
+    margin-bottom: var(--space-4xl);
+  }
+
+  .heading {
+    font-size: 100rem;
+  }
+}
+
+.sub-heading {
+  font-weight: var(--font-weight-regular);
+}
+
+@media (max-width: 896px) {
+  .sub-heading {
+    font-size: 16rem;
+  }
+}
+
+@media (min-width: 896px) {
+  .sub-heading {
+    font-size: 20rem;
+  }
+}
+
+/* ========================== 見出し 装飾 ========================== */
+
+.service,
+.works {
+  position: relative;
+}
+
+.service::before,
+.service::after,
+.works::before,
+.works::after {
+  content: "";
   display: block;
+  position: absolute;
 }
-ul,
-ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+
+.service::before,
+.works::before {
+  width: 1px;
+  top: 0;
 }
-a {
-  text-decoration: none;
-  color: #333;
+
+.service::after,
+.works::after {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-dl,
-dt,
-dd {
-  margin: 0;
+
+.service::before,
+.service::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.service::before {
+  background: var(--main-color);
+}
+
+.service::after {
+  background: rgba(var(--main-color-rgb) / 0.2);
+}
+
+.works::before {
+  background: var(--base-color);
+  left: 7.5px;
+}
+
+.works::after {
+  background: rgba(var(--base-color-rgb) / 0.2);
+}
+
+@media (max-width: 896px) {
+  .service::before,
+  .works::before {
+    height: 80rem;
+  }
+
+  .service::after,
+  .works::after {
+    top: 72rem;
+  }
+
+  .works::before,
+  .works::after {
+    margin-left: 8%;
+  }
+}
+
+@media (min-width: 896px) {
+  .service::before,
+  .works::before {
+    height: 110rem;
+  }
+
+  .service::after,
+  .works::after {
+    top: 102rem;
+  }
+
+  .works::before,
+  .works::after {
+    margin-left: 252rem;
+  }
+}
+
+/* ========================== キャッチコピー ========================== */
+
+.copy {
+  display: inline-block;
+  background: var(--base-color);
+  margin-bottom: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+}
+
+@media (max-width: 896px) {
+  .copy {
+    font-size: 20rem;
+  }
+}
+
+@media (min-width: 896px) {
+  .copy {
+    font-size: 40rem;
+  }
+}
+
+/* ========================== ボタン ========================== */
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-family-en);
+  text-transform: uppercase;
+}
+
+.btn-arrow {
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.btn-arrow::before {
+  content: "";
+  display: block;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  width: 33.33333%;
+  height: 33.33333%;
+}
+
+@media (max-width: 896px) {
+  .btn {
+    width: 100%;
+    font-size: 18rem;
+  }
+
+  .btn-arrow {
+    width: 30rem;
+    height: 30rem;
+  }
+}
+
+@media (min-width: 896px) {
+  .btn {
+    font-size: 17rem;
+  }
+
+  .btn-arrow {
+    width: 30rem;
+    height: 30rem;
+  }
+}
+
+/* ---------- ボタン (border) ---------- */
+
+.btn--border {
+  position: relative;
+  padding-bottom: var(--space-md);
+}
+
+.btn--border .btn-arrow {
+  position: relative;
+}
+
+@media (min-width: 896px) {
+  .btn--border {
+    width: 300rem;
+  }
+}
+
+/* ---------- ボタン (box) ---------- */
+
+.btn--box {
+  position: relative;
+  justify-content: center;
+}
+
+.btn--box .btn-arrow {
+  position: absolute;
+}
+
+@media (max-width: 896px) {
+  .btn--box {
+    border-radius: 30rem;
+    height: 60rem;
+  }
+
+  .btn--box .btn-arrow {
+    right: 5%;
+  }
+}
+
+@media (min-width: 896px) {
+  .btn--box {
+    border-radius: 35rem;
+    height: 72rem;
+  }
+
+  .btn--box .btn-arrow {
+    right: 10%;
+  }
+}
+
+/* ========================== アイコン ========================== */
+.icon {
+  display: block;
 }

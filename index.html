@@ -218,8 +218,8 @@
         <section class="service">
             <div class="service__content">
                 <div class="service__heading-area heading-area">
-                    <h2 class="service__heading heading">service</h2>
-                    <p class="service__sub-heading sub-heading">サービス案内</p>
+                    <span class="service__heading heading">service</span>
+                    <h2 class="service__sub-heading sub-heading">サービス案内</h2>
                 </div>
 
                 <ol class="service__list">
@@ -426,29 +426,57 @@
 
     <!-- ========================== footer ========================== -->
     <footer class="footer">
-        <div class="footer__wrapper">
+        <div class="footer__content">
 
-            <div class="footer__logo"><a href="#"><img src="assets/images/logo.png" alt=""></a></div>
+            <div class="footer__block footer__block--top">
 
-            <div class="footer__block footer__block--middle">
-                <nav class="footer__nav">
-                    <ul class="footer__nav-list">
-                        <li class="footer__nav-item"><a href="#">私たちの想い</a></li>
-                        <li class="footer__nav-item"><a href="#">サービス案内</a></li>
-                        <li class="footer__nav-item"><a href="#">実績紹介</a></li>
-                        <li class="footer__nav-item"><a href="#">会社案内</a></li>
-                        <li class="footer__nav-item"><a href="#">お知らせ</a></li>
-                        <li class="footer__nav-item"><a href="#">お問い合わせ</a></li>
-                    </ul>
-                </nav>
+                <div class="footer__block-item footer__block-item--left">
+                    <div class="footer__logo"><a href="#"><img src="assets/images/logo.png" alt=""></a></div>
 
-                <div class="footer__info">
-                    <ul class="address__list">
-                        <li class="address__item">住所が入ります住所が入ります</li>
-                        <li class="address__item">住所が入ります住所が入ります</li>
-                    </ul>
 
-                    <p class="tel">tel: 000-123-4567 / fax 000-123-4568</p>
+
+                    <div class="footer__info">
+                        <ul class="address__list">
+                            <li class="address__item">住所が入ります住所が入ります</li>
+                            <li class="address__item">住所が入ります住所が入ります</li>
+                        </ul>
+
+                        <p class="tel en">tel: 000-123-4567 / fax 000-123-4568</p>
+                    </div>
+
+                </div>
+
+                <div class="footer__block-item footer__block-item--right">
+                    <nav class="footer__nav">
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">私たちの想い</a></li>
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">サービス案内</a></li>
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">実績紹介</a></li>
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">会社案内</a></li>
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">お知らせ</a></li>
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">お問い合わせ</a></li>
+                        </ul>
+                    </nav>
+
+                    <nav class="sns-nav sns-nav--footer">
+                        <ul class="sns-nav__list">
+                            <li class="sns-nav__item">
+                                <a href="#">
+                                    <img src="assets/images/icon_x--header.png" alt="X">
+                                </a>
+                            </li>
+                            <li class="sns-nav__item">
+                                <a href="#">
+                                    <img src="assets/images/icon_youtube--header.png" alt="youtube">
+                                </a>
+                            </li>
+                            <li class="sns-nav__item">
+                                <a href="#">
+                                    <img src="assets/images/icon_insta--header.png" alt="insta">
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
 
@@ -458,10 +486,10 @@
                 <nav class="footer-legal">
                     <ul class="footer-legal__list">
                         <li class="footer-legal__item">
-                            <a href="#">プライバシーポリシー</a>
+                            <a href="#" class="footer-legal__link">プライバシーポリシー</a>
                         </li>
                         <li class="footer-legal__item">
-                            <a href="#">サイトマップ</a>
+                            <a href="#" class="footer-legal__link">サイトマップ</a>
                         </li>
                     </ul>
                 </nav>
