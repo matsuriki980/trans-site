@@ -62,7 +62,7 @@
     visibility: visible;
   }
 
-  .header__nav-wrapper {
+  .header__nav-content {
     overflow-y: scroll;
     background: var(--main-color);
     width: min(100%, 640px);
@@ -72,11 +72,11 @@
     top: 0;
     right: 0;
     transform: translateX(100%);
-    transition: all 0.5s;
+    transition: var(--transition);
     z-index: 18;
   }
 
-  .header__nav-wrapper.is-open {
+  .header__nav.is-open .header__nav-content {
     transform: translateX(0);
   }
 
@@ -213,7 +213,7 @@
     width: 46.875%;
     height: 1px;
     background: var(--base-color);
-    transition: all 0.5s;
+    transition: var(--transition);
   }
 
   .hamburger-btn span:nth-of-type(1) {
@@ -257,7 +257,7 @@
     transition: all 0.5s;
   }
 
-  .header__nav-mask.is-open {
+  .header__nav.is-open .header__nav-mask {
     opacity: 1;
     visibility: visible;
   }
@@ -271,7 +271,7 @@
     height: 100%;
   }
 
-  .header__nav-wrapper {
+  .header__nav-content {
     height: 100%;
   }
 
@@ -309,6 +309,49 @@
   }
 }
 
+/* ========================== トップページボタン ========================== */
+@media (min-width: 896px) {
+  .top-page-btn__wrapper {
+    width: 150rem;
+    height: 150rem;
+    position: fixed;
+    z-index: 20;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    transition: all 0.5s;
+  }
+
+  .top-page-btn__wrapper.is-visible {
+    transform: translateY(0);
+  }
+
+  .top-page-btn {
+    width: 45%;
+    height: 45%;
+    border-radius: 50%;
+    background: var(--accent-color);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .top-page-btn::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 35%;
+    height: 35%;
+    border-top: 2px solid var(--base-color);
+    border-right: 2px solid var(--base-color);
+    top: 43%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+}
+
 /* ========================== fv ========================== */
 .fv {
   width: 100%;
@@ -323,7 +366,6 @@
 }
 
 .mainvisual {
-  width: 100%;
   height: 100%;
   position: relative;
 }
@@ -340,6 +382,28 @@
 
 .mainvisual__copy--sub {
   line-height: 1.5;
+}
+
+/* 一文字ずつフェードイン */
+.fv-copy {
+  display: inline-block;
+  overflow: hidden;
+  opacity: 0; /* リロード時のちらつきを防止 */
+}
+
+.fv-copy span {
+  animation: fvCopyFadeIn var(--animation-duration) forwards;
+  animation-delay: calc(var(--i) * 0.05s);
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+@keyframes fvCopyFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mainvisual__img {
@@ -364,32 +428,70 @@
   align-items: center;
 }
 
-.scroll-var-text {
+.scroll-var {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.scroll-var::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  border-radius: 50%;
+  background: var(--font-color);
+}
+
+.scroll-var__text {
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   font-weight: var(--font-weight-regular);
   position: relative;
 }
 
-.scroll-var-text::before,
-.scroll-var-text::after {
+.scroll-var__border {
+  width: 2px;
+  position: relative;
+  height: 70rem;
+  overflow: hidden;
+  background: #d5d5d5;
+}
+
+.scroll-var__border::before {
   content: "";
   display: block;
-  position: absolute;
+  width: 100%;
+  height: 75%;
   background: var(--font-color);
-  left: 50%;
-  transform: translateX(-50%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  animation: scrollbar 2s ease-in-out infinite;
 }
 
-.scroll-var-text::before {
-  width: 1px;
-}
-
-.scroll-var-text::after {
-  border-radius: 50%;
+@keyframes scrollbar {
+  0% {
+    height: 0;
+    top: 0;
+  }
+  30% {
+    height: 100%;
+  }
+  100% {
+    top: 100%;
+  }
 }
 
 @media (max-width: 896px) {
+  .mainvisual {
+    width: 100%;
+  }
+
   .mainvisual__copy-wrapper {
     bottom: var(--space-2xl);
     left: 5%;
@@ -409,24 +511,27 @@
     width: 10%;
   }
 
-  .scroll-var-text {
-    padding: 300rem 0 80rem;
+  .scroll-var {
+    margin-top: 300rem;
+    row-gap: 10rem;
+    padding-bottom: 12rem;
+  }
+
+  .scroll-var::before {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .scroll-var__text {
     font-size: 10rem;
-  }
-
-  .scroll-var-text::before {
-    height: 60rem;
-    bottom: 12rem;
-  }
-
-  .scroll-var-text::after {
-    width: 3rem;
-    height: 3rem;
-    bottom: 0;
   }
 }
 
 @media (min-width: 896px) {
+  .mainvisual {
+    width: 1520rem;
+  }
+
   .mainvisual__copy-wrapper {
     bottom: 96rem;
     left: 3%;
@@ -442,7 +547,7 @@
   }
 
   .side-var {
-    width: 5.55%;
+    width: 80rem;
     padding-top: 175rem;
     row-gap: 80rem;
   }
@@ -486,20 +591,19 @@
     width: 20rem;
   }
 
-  .scroll-var-text {
+  .scroll-var {
     font-size: 12rem;
-    padding-bottom: 80rem;
+    padding-bottom: 12rem;
+    row-gap: 12rem;
   }
 
-  .scroll-var-text::before {
-    height: 60rem;
-    bottom: 12rem;
+  .scroll-var::before {
+    width: 5rem;
+    height: 5rem;
   }
 
-  .scroll-var-text::after {
-    width: 3rem;
-    height: 3rem;
-    bottom: 0;
+  .scroll-var__text {
+    font-size: 12rem;
   }
 }
 

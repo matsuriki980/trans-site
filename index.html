@@ -7,7 +7,8 @@
 
     <title>トランス物流株式会社</title>
 
-    <meta name="description" content="">
+    <meta name="description" content="ここは、「人々の心をつなぎ、生活を支える」というポリシーのもと、
+    専属チャーター配送、危険物輸送を行うトランス物流株式会社のサービスサイトです">
     <meta name="format-detection" content="telephone=no">
     <meta property="og:site_name" content="トランス物流株式会社">
     <meta property="og:url" content="">
@@ -16,9 +17,6 @@
     <meta property="og:description" content="ここは、「人々の心をつなぎ、生活を支える」というポリシーのもと、
     専属チャーター配送、危険物輸送を行うトランス物流株式会社のサービスサイトです">
     <meta property="og:locale" content="ja_JP">
-    <meta property="og:image" content="">
-
-    <link rel="icon" href="">
 
     <!-- css 読み込み -->
     <link rel="stylesheet" href="assets/css/reset.css">
@@ -39,9 +37,9 @@
 
             <h1 class="header__logo"><a href="#"><img src="assets/images/logo.png" alt="トランス物流株式会社"></a></h1>
 
-            <nav class="header__nav">
+            <nav class="header__nav" id="hamburger-menu">
 
-                <div class="header__nav-wrapper">
+                <div class="header__nav-content">
 
                     <div class="header__nav-logo pc-hidden"><img src="assets/images/logo.png" alt="トランス物流株式会社"></div>
 
@@ -99,7 +97,7 @@
                 <div class="header__nav-mask"></div>
             </nav>
 
-            <button class="hamburger-btn">
+            <button class="hamburger-btn" id="hamburger-btn">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -109,8 +107,12 @@
 
     <main>
 
+        <div class="top-page-btn__wrapper sp-hidden" id="top-page-btn">
+            <button class="top-page-btn"></button>
+        </div>
+
         <!-- ========================== fv ========================== -->
-        <section class="fv">
+        <section class="fv" id="fv">
 
             <div class="fv__content">
 
@@ -118,7 +120,10 @@
 
                     <div class="mainvisual__copy-wrapper">
 
-                        <h2 class="mainvisual__copy mainvisual__copy--main">未知なる道を、<br>走り続ける。</h2>
+                        <h2 class="mainvisual__copy mainvisual__copy--main">
+                            <span class="fv-copy">未知なる道を、</span><br>
+                            <span class="fv-copy">走り続ける。</span>
+                        </h2>
                         <p class="mainvisual__copy mainvisual__copy--sub en">Navigating the Path Forward, Together.<br>
                             Every mile reflects our commitment to a lasting partnership<br> and your business success.
                         </p>
@@ -158,7 +163,10 @@
                         </ul>
                     </nav>
 
-                    <span class="scroll-var-text en">scroll down</span>
+                    <div class="scroll-var">
+                        <span class="scroll-var__text en">scroll down</span>
+                        <span class="scroll-var__border"></span>
+                    </div>
                 </aside>
 
             </div>
@@ -180,7 +188,7 @@
             <div class="feature__content">
 
                 <div class="feature__text-area">
-                    <p class="feature__copy-area">
+                    <p class="feature__copy-area copy__area">
                         <span class="feature__copy copy">ものを運び、心をつなぐ。</span><br>
                         <span class="feature__copy copy">人々の生活を支え続けます。</span>
                     </p>
@@ -319,7 +327,7 @@
 
                 <div class="company__bg"></div>
 
-                <p class="company__copy-area">
+                <p class="company__copy-area copy__area">
                     <span class="company__copy copy">想いを運びつづけて80年。</span><br>
                     <span class="company__copy copy">常に先をめざして走り続けます。</span>
                 </p>
@@ -425,7 +433,7 @@
     </main>
 
     <!-- ========================== footer ========================== -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer__content">
 
             <div class="footer__block footer__block--top">
@@ -501,5 +509,5 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="" defer></script>
+    <script src="assets/js/script.js" defer></script>
 </body>
