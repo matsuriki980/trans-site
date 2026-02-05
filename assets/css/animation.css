@@ -1,0 +1,134 @@
+/* ========================== fv キャッチコピー 一文字ずつフェードイン ========================== */
+.fv-copy span {
+  animation: fvCopyFadeIn var(--animation-duration) forwards;
+  animation-delay: calc(var(--fvcopy-delay) * 0.05s);
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+@keyframes fvCopyFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================== fv スクロールダウンバー アニメーション ========================== */
+.scroll-var__border::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 75%;
+  background: var(--font-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  animation: scrollbar 2s ease-in-out infinite;
+}
+
+@keyframes scrollbar {
+  0% {
+    height: 0;
+    top: 0;
+  }
+  30% {
+    height: 100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* ========================== feature / company キャッチコピー 背景アニメーション ========================== */
+.copy::before {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: var(--base-color);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: scaleX(0);
+  transition: var(--transition);
+  transform-origin: left;
+}
+
+.copy.is-visible::before {
+  transform: scaleX(1);
+}
+
+/* ========================== 見出し 一文字ずつフェードイン ========================== */
+.heading {
+  overflow: hidden;
+}
+
+.heading__text span {
+  opacity: 0;
+  transform: translateY(100%);
+  display: inline-block;
+}
+
+.heading__text.is-visible span {
+  animation: headingFadeIn var(--animation-duration) forwards;
+  animation-delay: calc(var(--heading-delay) * 0.05s);
+  opacity: 0;
+}
+
+@keyframes headingFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================== リード文 ========================== */
+.fadeIn-item-lead {
+  opacity: 0;
+}
+
+.fadeIn-item-lead.is-visible {
+  animation: fade-in-lead var(--animation-duration) forwards;
+}
+
+@keyframes fade-in-lead {
+  to {
+    opacity: 1;
+  }
+}
+/* ========================== 遅れてフェードイン ========================== */
+.fadeIn-item-delay {
+  opacity: 0;
+}
+
+.fadeIn-item-delay.is-visible {
+  animation: fade-in-delay var(--animation-duration) forwards;
+  animation-delay: calc(var(--fadeIn-delay) * 0.2s);
+}
+
+@keyframes fade-in-delay {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ========================== transformによるフェードイン ========================== */
+.fadeIn-item-left,
+.fadeIn-item-right {
+  transition: all 0.8s;
+}
+
+.fadeIn-item-left {
+  transform: translateX(-110%);
+}
+
+.fadeIn-item-right {
+  transform: translateX(120%);
+}
+
+.fadeIn-item-left.is-visible,
+.fadeIn-item-right.is-visible {
+  transform: translateX(0);
+}

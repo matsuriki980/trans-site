@@ -26,7 +26,7 @@ const initHamburgerMenu = () => {
 // ==========================================================================================
 // トップページボタン
 // ==========================================================================================
-const topPageBtn = () => {
+const initTopPageBtn = () => {
   if (window.innerWidth > 896) {
     const btn = document.querySelector("#top-page-btn");
     const fv = document.querySelector("#fv");
@@ -55,7 +55,7 @@ const topPageBtn = () => {
 };
 
 // ==========================================================================================
-// fv キャッチコピー
+// fv キャッチコピー 一文字ずつフェードイン
 // ==========================================================================================
 const fvCopys = document.querySelectorAll(".fv-copy");
 
@@ -68,35 +68,107 @@ fvCopys.forEach((fvCopy) => {
   chars.forEach((char, i) => {
     const span = document.createElement("span");
     span.textContent = char;
-    span.style.setProperty("--i", i);
+    span.style.setProperty("--fvcopy-delay", i);
     fvCopy.appendChild(span);
   });
 });
 
 // ==========================================================================================
-// feature / company キャッチコピー
+// initFadeInObserverアニメーション
 // ==========================================================================================
-const copyBackground = () => {
-  const copys = document.querySelectorAll(".copy__area");
 
+const initIntersectionObserver = () => {
   const options = {
-    rootMargin: "-50% 0px", // ビューポートの中央を基準にアニメーション
+    rootMargin: "0px 0px -70%", // 要素が画面上部に達したら実行
   };
 
-  const initCopyFadeInObserver = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
+  const fadeIn = () => {
+    const fadeInTriggers = document.querySelectorAll(".fadeIn-trigger");
 
-      entry.target.classList.add("is-visible");
-      observer.unobserve(entry.target); // 無駄な処理をなくすために監視停止
+    const fadeInProcess = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const items = entry.target.querySelectorAll(
+          ".fadeIn-item, .fadeIn-item-delay, .fadeIn-item-lead, .fadeIn-item-left, .fadeIn-item-right, .fadeIn-item-left-delay, .fadeIn-item-right-delay",
+        );
+
+        if (items.length === 0) return;
+
+        items.forEach((item, i) => {
+          // 連続フェードインの秒数を共通化
+          item.style.setProperty("--fadeIn-delay", i);
+
+          // 冗長になるので定数に
+          const itemLeftDelay = item.classList.contains(
+            "fadeIn-item-left-delay",
+          );
+
+          const itemRightDelay = item.classList.contains(
+            "fadeIn-item-right-delay",
+          );
+
+          // 見出しフェードインの直後にリードアニメーションを実行
+          if (item.classList.contains("fadeIn-item-lead")) {
+            setTimeout(() => {
+              item.classList.add("is-visible");
+            }, 300);
+            return;
+          }
+
+          // transformでX軸アニメーション
+          if (itemLeftDelay || itemRightDelay) {
+            setTimeout(() => {
+              item.classList.add("is-visible");
+            }, 300);
+            return;
+          }
+
+          // 見出しフェードインから少し間をおいてアニメーション
+          if (item.classList.contains("fadeIn-item-delay")) {
+            setTimeout(() => {
+              item.classList.add("is-visible");
+            }, 600);
+            return;
+          }
+
+          // トリガー要素が判定ラインと交わったら即時実行
+          item.classList.add("is-visible");
+        });
+
+        observer.unobserve(entry.target); //全て実行したら監視を終了、アニメーションは一度のみ
+      });
+    };
+
+    const FadeInObserver = new IntersectionObserver(fadeInProcess, options);
+
+    // ----------------------------------------
+    // 監視対象はfadeInTriggersで統一
+    // ----------------------------------------
+    fadeInTriggers.forEach((target) => {
+      FadeInObserver.observe(target);
+    });
+
+    // ----------------------------------------
+    // 見出し 一文字ずつフェードイン
+    // ----------------------------------------
+    const headings = document.querySelectorAll(".heading__text");
+
+    headings.forEach((heading) => {
+      const headingText = heading.textContent;
+      const chars = headingText.split("");
+      heading.textContent = "";
+      heading.style.opacity = "1";
+
+      chars.forEach((char, i) => {
+        const span = document.createElement("span");
+        span.textContent = char;
+        span.style.setProperty("--heading-delay", i);
+        heading.appendChild(span);
+      });
     });
   };
-
-  const copyObserver = new IntersectionObserver(initCopyFadeInObserver,options);
-
-  copys.forEach((copy) => {
-    copyObserver.observe(copy);
-  });
+  fadeIn();
 };
 
 // ==========================================================================================
@@ -105,6 +177,6 @@ const copyBackground = () => {
 
 window.addEventListener("DOMContentLoaded", () => {
   initHamburgerMenu();
-  topPageBtn();
-  copyBackground();
+  initTopPageBtn();
+  initIntersectionObserver();
 });

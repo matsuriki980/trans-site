@@ -391,21 +391,6 @@
   opacity: 0; /* リロード時のちらつきを防止 */
 }
 
-.fv-copy span {
-  animation: fvCopyFadeIn var(--animation-duration) forwards;
-  animation-delay: calc(var(--i) * 0.05s);
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(100%);
-}
-
-@keyframes fvCopyFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .mainvisual__img {
   overflow: hidden;
   width: 100%;
@@ -459,32 +444,6 @@
   height: 70rem;
   overflow: hidden;
   background: #d5d5d5;
-}
-
-.scroll-var__border::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 75%;
-  background: var(--font-color);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  animation: scrollbar 2s ease-in-out infinite;
-}
-
-@keyframes scrollbar {
-  0% {
-    height: 0;
-    top: 0;
-  }
-  30% {
-    height: 100%;
-  }
-  100% {
-    top: 100%;
-  }
 }
 
 @media (max-width: 896px) {
@@ -710,6 +669,7 @@
 
 .feature__description {
   line-height: var(--line-height);
+  opacity: 0;
 }
 
 @media (max-width: 896px) {
@@ -823,10 +783,12 @@
 .service__item {
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 .service__text-area {
   position: absolute;
+  z-index: 1;
   background: var(--base-color);
   box-sizing: border-box;
 }
