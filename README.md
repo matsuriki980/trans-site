@@ -12,7 +12,7 @@ Webサイト制作の基礎スキルの習得を目的として制作した、�
 ## 使用技術
 + HTML  
 + CSS  
-+ JavaScript  
++ JavaScript (Vanilla JS)  
 &nbsp;
 &nbsp;
 
