@@ -128,7 +128,7 @@
 /* ========================== transformによるフェードイン ========================== */
 .fadeIn-item-left,
 .fadeIn-item-right {
-  transition: all 0.8s;
+  transition: all 1s;
 }
 
 .fadeIn-item-left {
