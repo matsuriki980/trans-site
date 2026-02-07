@@ -42,6 +42,17 @@
 }
 
 /* ========================== feature / company キャッチコピー 背景アニメーション ========================== */
+.copy__text {
+  transition: var(--transition);
+  transition-delay: 0.3s;
+  position: relative;
+  opacity: 0;
+}
+
+.copy.is-visible .copy__text {
+  opacity: 1;
+}
+
 .copy::before {
   content: "";
   display: inline-block;

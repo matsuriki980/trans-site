@@ -320,6 +320,42 @@ body {
   padding-bottom: var(--space-md);
 }
 
+.btn--border::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+}
+
+.btn--border:hover::after {
+  animation: btnBorderAnimation var(--animation-duration) ease;
+}
+
+@keyframes btnBorderAnimation {
+  0% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+
+  45% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+
+  56% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
 .btn--border .btn-arrow {
   position: relative;
 }
@@ -335,10 +371,21 @@ body {
 .btn--box {
   position: relative;
   justify-content: center;
+  overflow: hidden;
+  background: var(--base-color);
 }
 
 .btn--box .btn-arrow {
   position: absolute;
+  right: 10%;
+  background: var(--accent-color);
+  z-index: 1;
+}
+
+.btn--box .btn-arrow::before {
+  background: var(--base-color);
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 896px) {
@@ -356,14 +403,67 @@ body {
   .btn--box {
     border-radius: 35rem;
     height: 72rem;
+    overflow: hidden;
   }
 
-  .btn--box .btn-arrow {
-    right: 10%;
+  .btn--box::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition:
+      transform 0.5s ease,
+      transform-origin 0s 0.5s;
+  }
+
+  .btn-text--box {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn--box:hover {
+    color: var(--base-color);
+  }
+
+  .btn--box:hover::after {
+    transform: scaleX(1); /* 左から右へ背景拡大 */
+    transform-origin: left; /* 起点は左 */
+    transition:
+      transform 0.5s ease,
+      transform-origin 0s;
+  }
+
+  .btn--box:hover .btn-arrow {
+    background: var(--base-color);
+  }
+
+  .btn--box:hover .btn-arrow::before {
+    background: var(--accent-color);
   }
 }
 
 /* ========================== アイコン ========================== */
 .icon {
   display: block;
+}
+
+/* ==========================  リンク ホバーアニメーション ========================== */
+.header__nav-link,
+.footer__nav-link,
+.sns-nav__link,
+.footer-legal__link {
+  transition: var(--transition);
+}
+
+.header__nav-link:hover,
+.footer__nav-link:hover,
+.sns-nav__link:hover,
+.footer-legal__link:hover {
+  opacity: 0.5;
 }

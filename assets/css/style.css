@@ -298,6 +298,11 @@
     justify-content: center;
     align-items: center;
     column-gap: var(--space-xs);
+    transition: var(--transition);
+  }
+
+  .header__nav-item--btn a:hover {
+    transform: scale(1.05);
   }
 
   .header__nav-item--btn .icon {
@@ -636,7 +641,10 @@
 .feature__btn {
   color: var(--base-color);
   margin-left: auto;
-  border-bottom: 1px var(--base-color) solid;
+}
+
+.feature__btn::after {
+  background: var(--base-color);
 }
 
 .feature__img-area {
@@ -998,16 +1006,7 @@
 
 .works__btn {
   color: var(--accent-color);
-  background: var(--base-color);
   margin: 0 auto;
-}
-
-.works__btn .btn-arrow {
-  background: var(--accent-color);
-}
-
-.works__btn .btn-arrow::before {
-  background: var(--base-color);
 }
 
 @media (max-width: 896px) {
@@ -1097,6 +1096,19 @@
     font-size: 24rem;
   }
 
+  .works__item::before,
+  .works__title {
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+  }
+
+  .works__item:hover::before,
+  .works__item:hover .works__title {
+    opacity: 1;
+    visibility: visible;
+  }
+
   .works__title-text {
     padding-bottom: var(--space-md);
   }
@@ -1171,7 +1183,10 @@
 
 .company__btn {
   color: var(--accent-color);
-  border-bottom: 1px var(--accent-color) solid;
+}
+
+.company__btn::after {
+  background: var(--accent-color);
 }
 .company__btn .btn-arrow {
   background: var(--accent-color);
@@ -1341,7 +1356,10 @@
 .news__btn {
   color: var(--main-color);
   margin-left: auto;
-  border-bottom: 1px var(--main-color) solid;
+}
+
+.news__btn::after {
+  background: var(--main-color);
 }
 
 .news__btn-arrow {
@@ -1610,6 +1628,11 @@
     height: 125rem;
     column-gap: var(--space-md);
     font-size: 22rem;
+    transition: var(--transition);
+  }
+
+  .contact__cta-content--email .email-btn:hover {
+    transform: scale(1.05);
   }
 
   .contact__cta-content .tel-icon,

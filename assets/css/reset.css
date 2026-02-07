@@ -1,3 +1,8 @@
+/* スクロール設定 */
+html {
+  overflow-x: hidden;
+}
+
 /*  全要素のボックスサイズを統一 */
 *,
 *::before,

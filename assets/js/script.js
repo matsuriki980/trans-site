@@ -112,7 +112,7 @@ const initIntersectionObserver = () => {
           if (item.classList.contains("fadeIn-item-lead")) {
             setTimeout(() => {
               item.classList.add("is-visible");
-            }, 300);
+            }, 550);
             return;
           }
 
@@ -128,7 +128,7 @@ const initIntersectionObserver = () => {
           if (item.classList.contains("fadeIn-item-delay")) {
             setTimeout(() => {
               item.classList.add("is-visible");
-            }, 600);
+            }, 750);
             return;
           }
 
