@@ -463,7 +463,7 @@
   }
 
   .mainvisual__copy--main {
-    font-size: 30rem;
+    font-size: max(36px, 40rem);
     margin-bottom: var(--space-xl);
   }
 
@@ -1234,6 +1234,7 @@
   }
 
   .company__heading-area {
+    width: 100%;
     text-align: center;
     left: 50%;
     transform: translateX(-50%);
@@ -1260,19 +1261,13 @@
   }
 
   .company__copy-area {
-    padding-right: 7.5%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    padding-left: 750rem;
+    display: inline-block;
     margin-bottom: 390rem;
   }
 
-  .company__copy {
-    padding: var(--space-md) var(--space-lg);
-  }
-
   .company__text-area-content {
-    padding: 120rem;
+    padding: 120rem 200rem 120rem 120rem;
     width: 85%;
     margin-left: auto;
     position: relative;
@@ -1307,10 +1302,6 @@
 
   .company__description {
     width: 50%;
-  }
-
-  .company__nav {
-    width: 360rem;
   }
 
   .company__list {
